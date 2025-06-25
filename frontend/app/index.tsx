@@ -5,7 +5,8 @@ import ImageViewer from '@/components/ImageViewer';
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react';
 
-const PlaceholderImage = require("@/assets/images/background-image.png");
+const PlaceholderImage = require("@/assets/images/imageOfPaperBall.png");
+const HomeImage = require("@/assets/images/homeButton.png");
 
 export default function Index() {
   // Create state variable holding the value of selected image
@@ -29,12 +30,14 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        // Pass the selected image URI to the ImageViewer component
         <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
       </View>
       <View style={styles.buttonContainer}>
         <Button theme="primary" label="Choose a photo" onPress={pickImageAsync}/>
         <Button label="Use this photo" />
+      </View>
+      <View style={styles.footerContainer}>
+      <Button onPress={pickImageAsync}><ImageViewer imgSource={HomeImage} selectedImage={selectedImage}/></Button>
       </View>
     </View>
   );
@@ -53,6 +56,13 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1 / 3,
     alignItems: 'center',
+  },
+  footerContainer: {
+    width: 390,
+    height: 74.5,
+    flexShrink: 0,
+    borderRadius: 20,
+    backgroundColor: '#A97142',
   },
 });
 
