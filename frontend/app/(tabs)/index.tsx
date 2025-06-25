@@ -8,6 +8,7 @@ import { useState } from 'react';
 const PlaceholderImage = require("@/assets/images/background-image.png");
 
 export default function Index() {
+  // Create state variable holding the value of selected image
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
 
   const pickImageAsync = async () => {
@@ -18,6 +19,7 @@ export default function Index() {
     });
 
     if (!result.canceled) {
+      // Pick first uri from  assets array
       setSelectedImage(result.assets[0].uri);
     } else {
       alert('You did not select any image.');
@@ -27,6 +29,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
+        // Pass the selected image URI to the ImageViewer component
         <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
       </View>
       <View style={styles.footerContainer}>
