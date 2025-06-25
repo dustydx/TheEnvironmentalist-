@@ -32,7 +32,7 @@ export default function Index() {
         // Pass the selected image URI to the ImageViewer component
         <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
       </View>
-      <View style={styles.footerContainer}>
+      <View style={styles.buttonContainer}>
         <Button theme="primary" label="Choose a photo" onPress={pickImageAsync}/>
         <Button label="Use this photo" />
       </View>
@@ -50,11 +50,13 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 28,
   },
-  footerContainer: {
+  buttonContainer: {
     flex: 1 / 3,
     alignItems: 'center',
   },
 });
+
+
 
 
 // Has image 
