@@ -1,6 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 
 import Button from '@/components/Button'; 
+import { Image } from 'expo-image'; 
 import ImageViewer from '@/components/ImageViewer';
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react';
@@ -37,7 +38,9 @@ export default function Index() {
         <Button label="Use this photo" />
       </View>
       <View style={styles.footerContainer}>
-      <Button onPress={pickImageAsync}><ImageViewer imgSource={HomeImage} selectedImage={selectedImage}/></Button>
+      <Button label="hbutton" onPress={pickImageAsync}>
+          <Image source={HomeImage} style={{ width: 40, height: 40 }} />
+        </Button>
       </View>
     </View>
   );
@@ -52,6 +55,11 @@ const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
     paddingTop: 28,
+  },
+  homeContainer: {
+    width: 117,
+    height: 117,
+    flexShrink: 0,
   },
   buttonContainer: {
     flex: 1 / 3,
@@ -71,7 +79,7 @@ const styles = StyleSheet.create({
 
 // Has image 
 // import { View, StyleSheet } from 'react-native';
-//  import { Image } from 'expo-image'; 
+ 
 
 
 // const PlaceholderImage = require('@/assets/images/background-image.png');

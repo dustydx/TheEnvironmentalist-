@@ -5,6 +5,7 @@ type Props = {
   label: string;
   theme?: 'primary';
   onPress?: () => void;
+  children?: React.ReactNode; 
 };
 
 export default function Button({ label, theme, onPress }: Props) {
