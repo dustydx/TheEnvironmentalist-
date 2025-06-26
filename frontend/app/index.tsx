@@ -12,7 +12,6 @@ import axios from 'axios';
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/SelectButton.png");
 const backImage = require("@/assets/images/otherLOGO.png");
-const API = 'AIzaSyAobE9Idfzk258r0vzVNkhRT83qiw_KbZw';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API}`;
 
 
