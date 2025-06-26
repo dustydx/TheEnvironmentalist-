@@ -8,7 +8,6 @@ import { useState } from 'react';
 import * as FileSystem from 'expo-file-system';
 import axios from 'axios';
 
-
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/SelectButton.png");
 const backImage = require("@/assets/images/otherLOGO.png");
