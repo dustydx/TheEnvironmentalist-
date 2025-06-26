@@ -1,13 +1,13 @@
 import { View, StyleSheet } from 'react-native';
-
 import Button from '@/components/Button'; 
-import { Image } from 'expo-image'; 
+import { Image } from 'react-native'; 
 import ImageViewer from '@/components/ImageViewer';
 import * as ImagePicker from 'expo-image-picker';
+import { useRouter } from 'expo-router';
 import { useState } from 'react';
 
-const PlaceholderImage = require("@/assets/images/imageOfPaperBall.png");
-const HomeImage = require("@/assets/images/homeButton.png");
+const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
+const HomeImage = require("@/assets/images/SelectButton.png");
 
 export default function Index() {
   // Create state variable holding the value of selected image
@@ -28,19 +28,23 @@ export default function Index() {
     }
   };
 
+ 
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
       </View>
       <View style={styles.buttonContainer}>
+
         <Button theme="primary" label="Choose a photo" onPress={pickImageAsync}/>
-        <Button label="Use this photo" />
       </View>
       <View style={styles.footerContainer}>
-      <Button label="hbutton" onPress={pickImageAsync}>
-          <Image source={HomeImage} style={{ width: 40, height: 40 }} />
-        </Button>
+      <View style={styles.homeContainer}>
+      <Button onPress={pickImageAsync}>
+  <Image source={HomeImage} style={{ width: 100, height: 125,paddingBottom: 25, flexShrink:0,}} />
+</Button>
+</View>
+<View style ={styles.bottomBar}></View>
       </View>
     </View>
   );
@@ -49,17 +53,37 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
+    backgroundColor: '#FFF7CC',
     alignItems: 'center',
+  },
+  bottomBar: {
+    width: 390,
+    height: 5.5,
+    flexShrink: 0,
+    borderRadius: 20,
+    backgroundColor: '#A97142',
+    alignItems: 'center',       // center horizontally
+    paddingTop: 5,
+
   },
   imageContainer: {
     flex: 1,
     paddingTop: 28,
+    paddingLeft:10,
+    paddingRight:10,
+    width: 359.458,
+    height: 347.029,
+    flexShrink: 0,
+    borderRadius: 2,
+    alignItems: 'center',
+
   },
   homeContainer: {
-    width: 117,
-    height: 117,
-    flexShrink: 0,
+overflow: 'visible',
+    paddingVertical: 10,
+    alignItems: 'center',
+    height: 125,
+
   },
   buttonContainer: {
     flex: 1 / 3,
@@ -67,10 +91,12 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     width: 390,
-    height: 74.5,
-    flexShrink: 0,
-    borderRadius: 20,
+    height: 120.5,
     backgroundColor: '#A97142',
+    alignItems: 'center',       // center horizontally
+    justifyContent: 'center',   // center vertically
+    overflow: 'visible',
+    paddingBottom:10,
   },
 });
 
