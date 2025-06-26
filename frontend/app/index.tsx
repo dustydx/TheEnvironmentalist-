@@ -13,7 +13,6 @@ const HomeImage = require("@/assets/images/SelectButton.png");
 const backImage = require("@/assets/images/otherLOGO.png");
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API}`;
 
-
 export default function Index() {
   // Create state variable holding the value of selected image
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
@@ -75,11 +74,11 @@ export default function Index() {
       console.log("Gemini Vision Response:", responseText);
       //alert(responseText || "No response from Gemini.");
 
-      if (responseText?.includes('compostable')) {
+      if (responseText?.includes('Compostable')) {
         router.push('/compostPage');
-      } else if (responseText?.includes('recyclable')) {
+      } else if (responseText?.includes('Recyclable')) {
         router.push('/recyclePage');
-      } else if (responseText?.includes('landfill')) {
+      } else if (responseText?.includes('Landfill')) {
         router.push('/landfillPage');
       } else {
         router.push('/notAnItemPage');
