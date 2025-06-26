@@ -5,6 +5,7 @@ import ImageViewer from '@/components/ImageViewer';
 import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
+import * as FileSystem from 'expo-file-system';
 
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/SelectButton.png");
@@ -28,6 +29,19 @@ export default function Index() {
     }
   };
 
+    const handleClassifyImage = async () => {
+      if(!selectedImage) {
+        alert("Please choose a photo first.");
+        return;
+      }
+
+      //get base64 off of image
+      const fileBase64 =await FileSystem.readAsStringAsync(selectedImage, {
+        encoding: FileSystem.EncodingType.Base64,
+      })
+        console.log("Base64 of the image", fileBase64);
+    };
+
  
   return (
     <View style={styles.container}>
@@ -40,7 +54,7 @@ export default function Index() {
       </View>
       <View style={styles.footerContainer}>
       <View style={styles.homeContainer}>
-      <Pressable onPress={() => router.push('/landfillPage')}> 
+      <Pressable onPress={handleClassifyImage}> 
   <Image source={HomeImage} style={{ width: 100, height: 125,paddingBottom: 25, flexShrink:0,}} />
 </Pressable>
 </View>
@@ -91,7 +105,7 @@ overflow: 'visible',
   },
   footerContainer: {
     width: 390,
-    height: 110.5,
+    height: 80.5,
     backgroundColor: '#A97142',
     alignItems: 'center',       // center horizontally
     justifyContent: 'center',   // center vertically
@@ -99,40 +113,3 @@ overflow: 'visible',
     paddingBottom:10,
   },
 });
-
-
-
-
-// Has image 
-// import { View, StyleSheet } from 'react-native';
- 
-
-
-// const PlaceholderImage = require('@/assets/images/background-image.png');
-
-
-// export default function Index() {
-//   return (
-//     <View style={styles.container}>
-//       <View style={styles.imageContainer}>
-//         <Image source={PlaceholderImage} style={styles.image} />
-//       </View>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#25292e',
-//     alignItems: 'center',
-//   },
-//   imageContainer: {
-//     flex: 1,
-//   },
-//   image: {
-//     width: 320,
-//     height: 440,
-//     borderRadius: 18,
-//   },
-// });
