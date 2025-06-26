@@ -9,10 +9,12 @@ import * as FileSystem from 'expo-file-system';
 
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/SelectButton.png");
-const router = useRouter();
 export default function Index() {
   // Create state variable holding the value of selected image
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
+
+  const router = useRouter();
+
   
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
