@@ -7,7 +7,6 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import * as FileSystem from 'expo-file-system';
 import axios from 'axios';
-
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/SelectButton.png");
 const backImage = require("@/assets/images/otherLOGO.png");
@@ -57,8 +56,7 @@ export default function Index() {
                   },
                 },
                 {
-                  text: "I want you to tell me if this item is 'Recyclable', 'Compostable', 'Landfill', or 'Is not disposable' only.",
-                },
+                  text: "I want you to tell me if this item is 'Recyclable', 'Compostable', 'Landfill', if it is none of the above make it 'Is not disposable', give one word response",                },
               ],
             },
           ],
