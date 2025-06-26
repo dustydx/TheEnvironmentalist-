@@ -12,14 +12,14 @@ import axios from 'axios';
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/SelectButton.png");
 const backImage = require("@/assets/images/otherLOGO.png");
+const API = 'AIzaSyAobE9Idfzk258r0vzVNkhRT83qiw_KbZw';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API}`;
 
 
 export default function Index() {
   // Create state variable holding the value of selected image
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
-
-  
+  const router = useRouter();
   
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -75,7 +75,18 @@ export default function Index() {
   
       const responseText = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
       console.log("Gemini Vision Response:", responseText);
-      alert(responseText || "No response from Gemini.");
+      //alert(responseText || "No response from Gemini.");
+
+      if (responseText?.includes('compostable')) {
+        router.push('/compostPage');
+      } else if (responseText?.includes('recyclable')) {
+        router.push('/recyclePage');
+      } else if (responseText?.includes('landfill')) {
+        router.push('/landfillPage');
+      } else {
+        router.push('/notAnItemPage');
+      }
+
     } catch (error) {
       console.error("Error with Gemini API:", error.response?.data || error.message);
       alert("Something went wrong. Check the console.");
