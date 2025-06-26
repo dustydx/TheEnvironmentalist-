@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { Pressable, Text, View, StyleSheet } from 'react-native';
 import Button from '@/components/Button'; 
 import { Image } from 'react-native'; 
 import ImageViewer from '@/components/ImageViewer';
@@ -7,18 +7,23 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
-const HomeImage = require("@/assets/images/SelectButton.png");
-
+const HomeImage = require("@/assets/images/homeButton.png");
+const backImage = require("@/assets/images/logo.png");
+const recycle = require("@/assets/images/recycleImage.png");
 
 export default function CompostScreen() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>compost result</Text>
+      <Image source={backImage} style={{ width: 326, height: 100,flexShrink: 0,}} />
+      <View style={styles.imageContainer}>
+      <Image source ={recycle} style={{ width: 321, height: 345,flexShrink: 0,}} />
+      </View>
     <View style={styles.footerContainer}>
     <View style={styles.homeContainer}>
-    <Button onPress={pickImageAsync}>
-<Image source={HomeImage} style={{ width: 100, height: 125,paddingBottom: 25, flexShrink:0,}} />
-</Button>
+    <Pressable onPress={() => router.push('/')}>
+        <Image source={HomeImage} style={{ width: 100, height: 125,paddingBottom: 25, flexShrink:0,}} />
+    </Pressable>
 </View>
 <View style ={styles.bottomBar}></View>
     </View>
@@ -59,6 +64,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#A97142',
         alignItems: 'center',       // center horizontally
         paddingTop: 5,
+    
+      },
+      imageContainer: {
+        flex: 1,
+        paddingTop: 50,
+        paddingLeft:10,
+        paddingRight:10,
+        width: 359.458,
+        height: 347.029,
+        flexShrink: 0,
+        borderRadius: 2,
+        alignItems: 'center',
+        marginTop: 20,
     
       },
 });

@@ -9,7 +9,7 @@ import { useState } from 'react';
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/homeButton.png");
 const backImage = require("@/assets/images/logo.png");
-const landFill = require("@/assets/images/landfillImage.png");
+const compost = require("@/assets/images/compostImage.png");
 
 export default function CompostScreen() {
   const router = useRouter();
@@ -17,7 +17,7 @@ export default function CompostScreen() {
     <View style={styles.container}>
       <Image source={backImage} style={{ width: 326, height: 100,flexShrink: 0,}} />
       <View style={styles.imageContainer}>
-      <Image source ={landFill} style={{ width: 298, height: 300,flexShrink: 0,}} />
+      <Image source ={compost} style={{ width: 298, height: 278,flexShrink: 0,}} />
       </View>
     <View style={styles.footerContainer}>
     <View style={styles.homeContainer}>

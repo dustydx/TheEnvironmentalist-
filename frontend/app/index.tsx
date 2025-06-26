@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   bottomBar: {
     width: 390,
-    height: 5.5,
+    height: 30.5,
     flexShrink: 0,
     borderRadius: 20,
     backgroundColor: '#A97142',
@@ -91,7 +91,7 @@ overflow: 'visible',
   },
   footerContainer: {
     width: 390,
-    height: 120.5,
+    height: 110.5,
     backgroundColor: '#A97142',
     alignItems: 'center',       // center horizontally
     justifyContent: 'center',   // center vertically
