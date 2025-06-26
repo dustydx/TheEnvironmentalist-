@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { Pressable, Text, View, StyleSheet } from 'react-native';
 import Button from '@/components/Button'; 
 import { Image } from 'react-native'; 
 import ImageViewer from '@/components/ImageViewer';
@@ -7,18 +7,18 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
-const HomeImage = require("@/assets/images/SelectButton.png");
-
+const HomeImage = require("@/assets/images/homeButton.png");
 
 export default function CompostScreen() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>compost result</Text>
     <View style={styles.footerContainer}>
     <View style={styles.homeContainer}>
-    <Button onPress={pickImageAsync}>
-<Image source={HomeImage} style={{ width: 100, height: 125,paddingBottom: 25, flexShrink:0,}} />
-</Button>
+    <Pressable onPress={() => router.push('/')}>
+        <Image source={HomeImage} style={{ width: 100, height: 125,paddingBottom: 25, flexShrink:0,}} />
+    </Pressable>
 </View>
 <View style ={styles.bottomBar}></View>
     </View>

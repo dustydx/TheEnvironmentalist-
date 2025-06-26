@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { Pressable, View, StyleSheet } from 'react-native';
 import Button from '@/components/Button'; 
 import { Image } from 'react-native'; 
 import ImageViewer from '@/components/ImageViewer';
@@ -8,11 +8,11 @@ import { useState } from 'react';
 
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/SelectButton.png");
-
+const router = useRouter();
 export default function Index() {
   // Create state variable holding the value of selected image
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
-
+  
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ['images'],
@@ -40,9 +40,9 @@ export default function Index() {
       </View>
       <View style={styles.footerContainer}>
       <View style={styles.homeContainer}>
-      <Button onPress={pickImageAsync}>
+      <Pressable onPress={() => router.push('/landfillPage')}> 
   <Image source={HomeImage} style={{ width: 100, height: 125,paddingBottom: 25, flexShrink:0,}} />
-</Button>
+</Pressable>
 </View>
 <View style ={styles.bottomBar}></View>
       </View>
