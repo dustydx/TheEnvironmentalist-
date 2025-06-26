@@ -13,8 +13,7 @@ export default function Index() {
   // Create state variable holding the value of selected image
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
 
-  const router = useRouter();
-
+  
   
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
