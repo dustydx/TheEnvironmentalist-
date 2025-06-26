@@ -9,6 +9,8 @@ import * as FileSystem from 'expo-file-system';
 
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/SelectButton.png");
+const backImage = require("@/assets/images/otherLOGO.png");
+
 export default function Index() {
   // Create state variable holding the value of selected image
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
@@ -46,6 +48,9 @@ export default function Index() {
  
   return (
     <View style={styles.container}>
+      <View style={styles.logoContainer}>
+       <Image source={backImage} style={{width: 342,height: 97,flexShrink: 0,}} />
+       </View>
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
       </View>
@@ -113,4 +118,7 @@ overflow: 'visible',
     overflow: 'visible',
     paddingBottom:10,
   },
+  logoContainer: {
+    paddingTop: 20,
+  }
 });
