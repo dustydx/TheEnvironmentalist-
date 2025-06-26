@@ -1,4 +1,4 @@
-import { Pressable, View, StyleSheet } from 'react-native';
+import { Pressable, View, Text, StyleSheet } from 'react-native';
 import Button from '@/components/Button'; 
 import { Image } from 'react-native'; 
 import ImageViewer from '@/components/ImageViewer';
@@ -6,10 +6,14 @@ import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import * as FileSystem from 'expo-file-system';
+import axios from 'axios';
+
 
 const PlaceholderImage = require("@/assets/images/imageOfPaperBall3.jpg");
 const HomeImage = require("@/assets/images/SelectButton.png");
 const backImage = require("@/assets/images/otherLOGO.png");
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API}`;
+
 
 export default function Index() {
   // Create state variable holding the value of selected image
@@ -32,18 +36,53 @@ export default function Index() {
     }
   };
 
-    const handleClassifyImage = async () => {
-      if(!selectedImage) {
-        alert("Please choose a photo first.");
-        return;
-      }
-
-      //get base64 off of image
-      const fileBase64 =await FileSystem.readAsStringAsync(selectedImage, {
+  const handleClassifyImage = async () => {
+    if (!selectedImage) {
+      alert("Please choose a photo first.");
+      return;
+    }
+  
+    try {
+      const fileBase64 = await FileSystem.readAsStringAsync(selectedImage, {
         encoding: FileSystem.EncodingType.Base64,
-      })
-        console.log("Base64 of the image", fileBase64);
-    };
+      });
+  
+      const response = await axios.post(
+        GEMINI_URL,
+        {
+          contents: [
+            {
+              parts: [
+                {
+                  inlineData: {
+                    mimeType: 'image/jpeg',
+                    data: fileBase64,
+                  },
+                },
+                {
+                  text: "I want you to tell me if this item is 'Recyclable', 'Compostable', 'Landfill', or 'Not an item' only.",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+  
+      const responseText = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
+      console.log("Gemini Vision Response:", responseText);
+      alert(responseText || "No response from Gemini.");
+    } catch (error) {
+      console.error("Error with Gemini API:", error.response?.data || error.message);
+      alert("Something went wrong. Check the console.");
+    }
+  };
+  
+
 
  
   return (
