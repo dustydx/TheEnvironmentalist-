@@ -60,7 +60,7 @@ export default function Index() {
                   },
                 },
                 {
-                  text: "I want you to tell me if this item is 'Recyclable', 'Compostable', 'Landfill', or 'Not an item' only.",
+                  text: "I want you to tell me if this item is 'Recyclable', 'Compostable', 'Landfill', or 'Is not disposable' only.",
                 },
               ],
             },
