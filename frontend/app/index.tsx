@@ -56,7 +56,7 @@ export default function Index() {
                   },
                 },
                 {
-                  text: "I want you to tell me if this item is 'Recyclable', 'Compostable', 'Landfill', if it is none of the above make it 'Is not disposable', give one word response",                },
+                  text: "This is an item someone wants to throw away. Only state if it is 'Recyclable', 'Compostable', 'Landfill', otherwise state 'Is not disposable', if it is plants state it is 'Compostable'.",                },
               ],
             },
           ],
