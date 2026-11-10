@@ -17,7 +17,7 @@ Many people aren't sure which bin an item goes in, so recyclables end up in land
 
 ## 🎥 Demo
 
-▶️ **[Watch the demo video](docs/EcoSort-Demo.mp4)**
+▶️ **[Watch the demo video](docs/EcoSort-Demo.MOV)**
 📊 **[View our hackathon pitch deck](docs/EcoSort-Pitch-Deck.pdf)**
 
 
