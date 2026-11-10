@@ -106,6 +106,6 @@ Many people aren't sure which bin an item goes in, so recyclables end up in land
 
 Built by coaches at **Urban TxT**:
 
-- **Li Yuan Ho** — [GitHub](lyuanh0) · [LinkedIn](https://www.linkedin.com/in/liyuan-ho/)
-- **Daisy Fregoso** — [GitHub](dazyfrgso) · [LinkedIn](https://www.linkedin.com/in/daisy-fregoso/)
-- **Randy Reyes** — [GitHub](dustydx) · [LinkedIn](https://www.linkedin.com/in/randyreyesbarrios/)
+- **Li Yuan Ho** — [GitHub](@lyuanh0) · [LinkedIn](https://www.linkedin.com/in/liyuan-ho/)
+- **Daisy Fregoso** — [GitHub](@dazyfrgso) · [LinkedIn](https://www.linkedin.com/in/daisy-fregoso/)
+- **Randy Reyes** — [GitHub](@dustydx) · [LinkedIn](https://www.linkedin.com/in/randyreyesbarrios/)
