@@ -98,7 +98,6 @@ Many people aren't sure which bin an item goes in, so recyclables end up in land
 - Take photos with the camera in the app, not just from the gallery
 - Explain *why* an item belongs in a bin, with local recycling tips
 - Save a history of classifications with MongoDB
-- Move the Gemini call to a backend so the API key never reaches the client
 
 ## 👥 Team
 
