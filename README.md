@@ -21,7 +21,8 @@ Many people aren't sure which bin an item goes in, so recyclables end up in land
 
 <!-- Replace this line with your video: on github.com, edit README.md and drag the video file right here -->
 
-*Recorded during the hackathon.*
+📊 **[View our hackathon pitch deck](docs/EcoSort-Pitch-Deck.pdf)**
+
 
 ## ✨ Features
 
