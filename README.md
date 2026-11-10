@@ -1,4 +1,4 @@
-# ♻️ EcoSort — AI Waste Sorting App
+# ♻️ EcoSort
 
 > Take a photo of something you're about to throw away, and the app tells you whether it belongs in **recycling, compost or landfill**.
 
