@@ -2,12 +2,10 @@
 
 > Take a photo of something you're about to throw away, and the app tells you whether it belongs in **recycling, compost or landfill**.
 
-<!-- Add 2–3 screenshots side by side, e.g.: -->
-<!-- <p align="center">
-  <img src="screenshots/home.png" width="250">
-  <img src="screenshots/recycle.png" width="250">
-  <img src="screenshots/compost.png" width="250">
-</p> -->
+<p align="center">
+  <img src="frontend/assets/images/otherLOGO.png" width="340" alt="EcoSort logo">
+</p>
+
 
 ---
 
@@ -19,8 +17,7 @@ Many people aren't sure which bin an item goes in, so recyclables end up in land
 
 ## 🎥 Demo
 
-<!-- Replace this line with your video: on github.com, edit README.md and drag the video file right here -->
-
+▶️ **[Watch the demo video](docs/EcoSort-Demo.mp4)**
 📊 **[View our hackathon pitch deck](docs/EcoSort-Pitch-Deck.pdf)**
 
 
